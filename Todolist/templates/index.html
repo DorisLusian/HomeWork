@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Todolist</title>
+	</head>
+
+	<body>
+		<h1>Welcome to ToDoList!</h1>
+
+		<div class=row>
+			{% for list in lists %}
+			    <li>
+			    <span>{{list['title']}}</span>
+			    <a href="{{url_for('finish_list',list_id=list['_id'])}}">Finish</a>
+				</li>
+			{% endfor %}
+		</div>
+
+		<div>
+			<form method="post">
+				<input type="text" name="title">
+				<input type='submit'>
+			</form>
+		</div>
+	</body>
+</html>
